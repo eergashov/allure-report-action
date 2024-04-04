@@ -61,7 +61,7 @@ cp -r ./${INPUT_GH_PAGES}/last-history/. ./${INPUT_ALLURE_RESULTS}/history
 
 echo "generating report from ${INPUT_ALLURE_RESULTS} to ${INPUT_ALLURE_REPORT} ..."
 #ls -l ${INPUT_ALLURE_RESULTS}
-allure generate --single-file --clean ${INPUT_ALLURE_RESULTS} -o ${INPUT_ALLURE_REPORT}
+allure generate --clean ${INPUT_ALLURE_RESULTS} -o ${INPUT_ALLURE_REPORT}
 #echo "listing report directory ..."
 #ls -l ${INPUT_ALLURE_REPORT}
 
@@ -69,3 +69,8 @@ echo "copy allure-report to ${INPUT_ALLURE_HISTORY}/${INPUT_GITHUB_RUN_NUM}"
 cp -r ./${INPUT_ALLURE_REPORT}/. ./${INPUT_ALLURE_HISTORY}/${INPUT_GITHUB_RUN_NUM}
 echo "copy allure-report history to /${INPUT_ALLURE_HISTORY}/last-history"
 cp -r ./${INPUT_ALLURE_REPORT}/history/. ./${INPUT_ALLURE_HISTORY}/last-history
+
+
+echo "generating as single  report from ${INPUT_ALLURE_RESULTS} to ${INPUT_ALLURE_REPORT} ..."
+#ls -l ${INPUT_ALLURE_RESULTS}
+allure generate --single-file --clean ${INPUT_ALLURE_RESULTS} -o ${INPUT_ALLURE_REPORT}
